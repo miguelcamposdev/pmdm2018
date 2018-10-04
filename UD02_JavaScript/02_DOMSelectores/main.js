@@ -15,6 +15,12 @@ window.onload = function() {
         console.log(event);
         alert('El usuario ha escrito:' + inputNombre.value);
     }
+
+
+    // Selecciono todos los párrafos
+    var parrafos = document.querySelector("#parrafo1");
+    // Modifico el texto del párrafo seleccionado
+    parrafos.textContent = 'Texto modificado';
     
     
 }
