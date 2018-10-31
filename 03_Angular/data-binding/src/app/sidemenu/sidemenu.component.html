@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+  <mat-icon (click)="sidenav.toggle()" class="example-icon">menu</mat-icon>
+  <span> Menú lateral App</span>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" class="menu-lateral">
+    <mat-list role="list">
+      <mat-list-item role="listitem">Inicio </mat-list-item>
+      <mat-list-item role="listitem">Usuarios </mat-list-item>
+      <mat-list-item role="listitem">Perfil </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    {{titulo}}
+
+    <mat-list role="list">
+      <mat-list-item role="listitem">{{usuario.email}}</mat-list-item>
+      <mat-list-item role="listitem">{{usuario.username}}</mat-list-item>
+      <mat-list-item role="listitem">{{usuario.age}}</mat-list-item>
+      <mat-list-item role="listitem">Nació el año: {{getAnyoNacimiento(usuario)}}</mat-list-item>
+    </mat-list>
+
+    <input [type]="tipo" value="" [placeholder]="textoHint" />
+    <input type="button" value="Convertir en tipo número" (click)="convType()" />
+
+    <hr/>
+
+    <input type="text" value="" placeholder="Escribe lo que piensas y lo acertaré" [(ngModel)]="textoAdivino" />
+    <input type="button" value="Resetear" (click)="resetAdivino()" />
+    <p>{{textoAdivino}}</p>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

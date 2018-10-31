@@ -1,0 +1,17 @@
+.example-icon {
+    cursor: pointer;
+}
+
+.example-container {
+    position: relative;
+  }
+
+  .menu-lateral {
+      width: 20%;
+      height: 100%;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
