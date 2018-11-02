@@ -1,0 +1,13 @@
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Nombre del niño" [(ngModel)]="nombre" name="nombre" [ngClass]="{'nombre-correcto': checkNombre(), 'nombre-erroneo': !checkNombre()}">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Peso" [(ngModel)]="peso" name="peso" [ngStyle]="{'color': pesoColor()}" type="number">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="saveKid()" *ngIf="validateKid()">Guardar</button>
+  </form>
+  
