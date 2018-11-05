@@ -8,15 +8,20 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
-import { KidaddComponent } from './kidadd/kidadd.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { NoteListComponent } from './note-list/note-list.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './services/auth.service';
+import { NoteService } from './services/note.service';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    KidaddComponent
+    NoteListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -28,9 +33,9 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatSidenavModule,
     MatToolbarModule,
     FormsModule,
-    FlexLayoutModule
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService, NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
