@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } fwrom '@angular/common';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { NoteListComponent } from './note-list/note-list.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { NoteAddComponent } from './note-add/note-add.component';
 
 const routes: Routes = [
   { path: 'notelist', component: NoteListComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'noteadd', component: NoteAddComponent },
   { path: '', component: LoginComponent }
 ];
 

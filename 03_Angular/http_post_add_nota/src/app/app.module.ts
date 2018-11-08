@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSelectModule} from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -18,13 +19,15 @@ import { NoteService } from './services/note.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './register/register.component';
-
+import { NoteAddComponent } from './note-add/note-add.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 @NgModule({
   declarations: [
     AppComponent,
     NoteListComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NoteAddComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,9 @@ import { RegisterComponent } from './register/register.component';
     MatToolbarModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSelectModule,
+    MatCheckboxModule
   ],
   providers: [AuthService, NoteService],
   bootstrap: [AppComponent]
