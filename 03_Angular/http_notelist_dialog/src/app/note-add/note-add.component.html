@@ -1,0 +1,21 @@
+<div fxLayout="column" fFlexFill>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Título" [(ngModel)]="title">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Contenido nota" [(ngModel)]="content"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Color" [(value)]="colorSeleccionado">
+      <mat-option *ngFor="let color of colors" [value]="color">
+        {{color}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="favourite">Es una nota favorita</mat-checkbox>
+
+  <button mat-raised-button color="primary" (click)="addNote()">Guardar nota</button>
+</div>
