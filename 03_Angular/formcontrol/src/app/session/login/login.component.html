@@ -1,0 +1,58 @@
+<div class="container">
+  <div fxFlexFill>
+    <div fxLayout.gt-xs="row" fxLayout="column" fxFlexFill fxLayoutGap="10px" fxLayoutAlign="center center">
+      <mat-card fxFlex="30%">
+        <mat-card-header>
+          <mat-card-title>Login</mat-card-title>
+          <mat-card-subtitle fxShow.gt-xs="true">Introduce los datos de sesión</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content fxLayout.gt-xs="row" fxLayout="column">
+          <form [formGroup]="loginForm" fxLayout="column">
+            <mat-form-field>
+              <input matInput placeholder="Email" required type="email" formControlName="email">
+            </mat-form-field>
+            <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)" class="alert alert-danger">
+              <div *ngIf="loginForm.controls['email'].errors.required">
+                Email obligatorio
+              </div>
+              
+              <div *ngIf="loginForm.controls['email'].errors.email">
+                Email incorrecto
+              </div>
+
+            </div>
+            <mat-form-field>
+              <input matInput placeholder="Password *" type="password" formControlName="password">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Repeat Password" type="password" formControlName="repeatPassword">
+            </mat-form-field>
+            <div *ngIf="loginForm.controls['repeatPassword'].invalid && (loginForm.controls['repeatPassword'].dirty || loginForm.controls['repeatPassword'].touched)" class="alert alert-danger">
+                <div *ngIf="loginForm.controls['password'].value !== loginForm.controls['repeatPassword'].value">
+                  Las contraseñas no coindicen
+                </div>
+                
+              
+  
+              </div>
+          </form>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="onSubmit()">Entrar</button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card fxFlex="30%">
+        <mat-card-header>
+          <mat-card-title>Logger</mat-card-title>
+          <mat-card-subtitle fxShow.gt-xs="true">Introduce los datos de sesión</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content fxLayout.gt-xs="row" fxLayout="column">
+
+        </mat-card-content>
+        <mat-card-actions fxLayoutAlign="center">
+          <button mat-raised-button color="primary">Mostrar</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
