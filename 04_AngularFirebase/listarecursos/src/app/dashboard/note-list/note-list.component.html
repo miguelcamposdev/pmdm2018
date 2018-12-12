@@ -1,0 +1,6 @@
+<button (click)="addNewRecurso()">Nuevo</button>
+<ul>
+  <li *ngFor="let item of items | async">
+      <pre>{{ item.title | json }}</pre>
+  </li>
+</ul>

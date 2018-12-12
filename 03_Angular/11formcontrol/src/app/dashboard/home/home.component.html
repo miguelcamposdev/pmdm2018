@@ -1,0 +1,13 @@
+<div class="container">
+  <div fxFlexFill fxLayout.gt-xs="row" fxLayout="column" fxLayoutGap="10px">
+    <mat-card fxFlex="1 1 auto" *ngFor="let item of items; let i=index">
+      <mat-card-title>{{item.title}}</mat-card-title>
+      <mat-card-content>
+        {{item.content}}
+      </mat-card-content>
+      <mat-card-actions>
+        <button fxShow.lt-sm="false" mat-raised-button color="primary" fxFlexFill>Eliminar</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
