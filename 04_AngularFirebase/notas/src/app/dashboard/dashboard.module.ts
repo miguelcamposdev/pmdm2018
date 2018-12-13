@@ -10,6 +10,8 @@ import { NoteListComponent } from './note-list/note-list.component';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
+import { NoteFirestoreService } from './services/note-firestore.service';
+import { ColorFirestoreService } from './services/color-firestore.service';
 
 @NgModule({
   imports: [
@@ -25,7 +27,8 @@ import { AngularFireModule } from '@angular/fire';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
   ],
-  declarations: [ DashboardComponent, NoteListComponent ]
+  declarations: [ DashboardComponent, NoteListComponent ],
+  providers: [ NoteFirestoreService, ColorFirestoreService ]
 })
 
 export class DashboardModule {}

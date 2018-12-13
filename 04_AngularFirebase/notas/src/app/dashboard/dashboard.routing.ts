@@ -8,6 +8,6 @@ export const DashboardRoutes: Routes = [{
   component: DashboardComponent
 },
 {
-  path: 'notas',
+  path: 'notes',
   component: NoteListComponent
 }];
