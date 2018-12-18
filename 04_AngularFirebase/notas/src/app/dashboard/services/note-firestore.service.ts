@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { CreateNoteDto } from '../note-list/dto/create-note.dto';
 
-const nodeUrl = 'notes';
-
+const nodeUrl = '/notes';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +26,10 @@ export class NoteFirestoreService {
   // Obtiene todas las notas
   public getAll() {
     return this.firestore.collection(nodeUrl).snapshotChanges();
+  }
+
+  public getAllJoined() {
+  return this.firestore.collection(nodeUrl).get();
   }
 
   // Actualiza una nota

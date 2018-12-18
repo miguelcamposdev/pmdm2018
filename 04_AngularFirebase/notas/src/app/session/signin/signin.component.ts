@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-signin',
@@ -12,7 +11,7 @@ import { auth } from 'firebase/app';
 export class SigninComponent implements OnInit {
 
   public form: FormGroup;
-  constructor(private fb: FormBuilder, private router: Router, private afAuth: AngularFireAuth) {}
+  constructor(private fb: FormBuilder, private router: Router, public auth: AuthService) {}
 
   ngOnInit() {
     this.form = this.fb.group ( {
@@ -23,16 +22,6 @@ export class SigninComponent implements OnInit {
 
   onSubmit() {
     this.router.navigate ( [ '/dashboard' ] );
-  }
-
-  googleLogin() {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then(userCredential => {
-      console.log(userCredential);
-    });
-  }
-
-  googleLogout() {
-    this.afAuth.auth.signOut();
   }
 
 }

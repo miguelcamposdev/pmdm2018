@@ -15,7 +15,9 @@ export class ColorFirestoreService {
 
   // Obtiene un color
   public getOne(documentId: string) {
-    return this.firestore.doc(documentId).snapshotChanges();
+    const color = this.firestore.doc(documentId).snapshotChanges();
+    console.log(color);
+    return color;
   }
 
   // Obtiene todas las notas

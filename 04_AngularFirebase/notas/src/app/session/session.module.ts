@@ -16,6 +16,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     LockscreenComponent,
     SigninComponent,
     SignupComponent
-  ]
+  ],
+  providers: [AuthService]
 })
 
 export class SessionModule {}

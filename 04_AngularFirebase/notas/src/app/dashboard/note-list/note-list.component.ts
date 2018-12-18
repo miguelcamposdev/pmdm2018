@@ -13,7 +13,7 @@ import { ColorFirestoreService } from '../services/color-firestore.service';
 })
 export class NoteListComponent implements OnInit {
 
-  public notes = [];
+  public notes: Note[];
 
   constructor(
     public noteService: NoteFirestoreService,
@@ -32,6 +32,7 @@ export class NoteListComponent implements OnInit {
           data: note.payload.doc.data()
         };
 
+        // this.notes.push(newNote);
         this.colorService.getOne(newNote.data.color).subscribe(
           colorSnapshot => {
             newNote.data.color = colorSnapshot.payload.data();

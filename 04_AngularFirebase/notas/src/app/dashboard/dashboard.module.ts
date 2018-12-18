@@ -12,6 +12,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { NoteFirestoreService } from './services/note-firestore.service';
 import { ColorFirestoreService } from './services/color-firestore.service';
+import { ColorPipe } from './pipes/color.pipe';
 
 @NgModule({
   imports: [
@@ -25,9 +26,9 @@ import { ColorFirestoreService } from './services/color-firestore.service';
     MatMenuModule,
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
   ],
-  declarations: [ DashboardComponent, NoteListComponent ],
+  declarations: [ DashboardComponent, NoteListComponent, ColorPipe],
   providers: [ NoteFirestoreService, ColorFirestoreService ]
 })
 

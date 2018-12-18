@@ -1,6 +1,6 @@
 <p>Lista de notas</p>
 <ul>
   <li *ngFor="let note of notes">
-      <pre>{{ note.data.title }} {{ note.data.color.value }}</pre>
+      <pre>{{ note.data.title }} {{ (note.data.color | color | async)?.name }}</pre>
   </li>
 </ul>
