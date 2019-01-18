@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">03_TestAutoescuela</string>
+    <string-array name="numero_preguntas">
+        <item>- Seleccione número de preguntas -</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+    <string name="error_numero_preguntas">Seleccione un nº de preguntas</string>
+</resources>
