@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">04_DestroyLogin</string>
+    <string name="dialog_message">¿Deseas cerrar sesión?</string>
+    <string name="dialog_title">Salir</string>
+    <string name="ok">Sí</string>
+    <string name="cancel">Cancelar</string>
+</resources>
